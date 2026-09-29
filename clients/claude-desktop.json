@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "webask": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.webask.io/mcp/v1",
+        "--header",
+        "Authorization:${WEBASK_AUTH}"
+      ],
+      "env": {
+        "WEBASK_AUTH": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}

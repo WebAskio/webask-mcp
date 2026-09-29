@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "webask-api-key",
+      "description": "WebAsk API key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "webask": {
+      "type": "http",
+      "url": "https://mcp.webask.io/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer ${input:webask-api-key}"
+      }
+    }
+  }
+}

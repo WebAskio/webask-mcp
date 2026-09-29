@@ -1,0 +1,13 @@
+name: Проверка навыков
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Шапки, паритет языков, манифесты
+        run: python3 scripts/check-skills.py

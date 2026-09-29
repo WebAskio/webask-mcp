@@ -1,0 +1,20 @@
+{
+  "name": "webask",
+  "description": "WebAsk: MCP-сервер и навыки для работы с опросами из Claude Code",
+  "owner": {
+    "name": "WebAsk",
+    "email": "team@webask.io"
+  },
+  "plugins": [
+    {
+      "name": "webask",
+      "source": "./",
+      "description": "MCP-сервер WebAsk и 25 навыков на русском: от анкеты по описанию до отчёта для заказчика"
+    },
+    {
+      "name": "webask-en",
+      "source": "./en",
+      "description": "WebAsk MCP server and 25 skills in English: from a survey brief to a client-ready report"
+    }
+  ]
+}

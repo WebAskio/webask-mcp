@@ -1,0 +1,14 @@
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "get_quiz_integrations"
+      description: "Quiz integration state"
+      transport: "streamable_http"
+    - type: "mcp"
+      value: "get_quiz_report"
+      description: "Quiz report"
+      transport: "streamable_http"
+    - type: "mcp"
+      value: "get_quiz_versions"
+      description: "Quiz publication history"
+      transport: "streamable_http"

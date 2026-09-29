@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.WebAskio/webask-mcp",
+  "title": "WebAsk",
+  "description": "Build surveys, read answers and make reports in WebAsk from an AI assistant.",
+  "version": "1.0.0",
+  "websiteUrl": "https://webask.io/skills",
+  "repository": {
+    "url": "https://github.com/WebAskio/webask-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.webask.io/mcp/v1",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "WebAsk API key: Settings → API / MCP",
+          "value": "Bearer {api_key}",
+          "isRequired": true,
+          "isSecret": true,
+          "variables": {
+            "api_key": {
+              "description": "WebAsk API key",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

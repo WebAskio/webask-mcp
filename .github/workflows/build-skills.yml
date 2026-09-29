@@ -1,0 +1,50 @@
+name: Архивы навыков
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "en/skills/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Проверить навыки
+        run: python3 scripts/check-skills.py
+
+      - name: Собрать архивы
+        run: |
+          mkdir -p dist
+          for lang in ru en; do
+            base=skills; suffix=""
+            [ "$lang" = en ] && { base=en/skills; suffix="-en"; }
+            for d in "$base"/*/; do
+              name=$(basename "$d")
+              (cd "$base" && zip -qr "$GITHUB_WORKSPACE/dist/$name$suffix.zip" "$name" -x "*.DS_Store" -x "*/README.md")
+            done
+            (cd "$base" && zip -qr "$GITHUB_WORKSPACE/dist/webask-skills-$lang.zip" . -x "*.DS_Store" -x "*/README.md" -x "README.md")
+          done
+          ls -lh dist
+
+      - name: Опубликовать релиз
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: skills-latest
+          name: Навыки WebAsk
+          body: |
+            Архивы навыков, собранные из ветки main. Ссылки постоянные и всегда отдают текущую версию.
+
+            - `webask-skills-ru.zip`, `webask-skills-en.zip` — весь набор
+            - `<навык>.zip` — русский, `<навык>-en.zip` — английский
+
+            Обновлено: ${{ github.run_started_at }}
+          files: dist/*.zip
+          make_latest: false

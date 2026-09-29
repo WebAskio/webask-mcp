@@ -1,0 +1,6 @@
+# ~/.codex/config.toml
+# Ключ берётся из переменной окружения: export WEBASK_API_KEY=YOUR_API_KEY
+
+[mcp_servers.webask]
+url = "https://mcp.webask.io/mcp/v1"
+bearer_token_env_var = "WEBASK_API_KEY"

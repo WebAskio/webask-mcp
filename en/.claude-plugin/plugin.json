@@ -1,0 +1,39 @@
+{
+  "name": "webask-en",
+  "displayName": "WebAsk (English)",
+  "version": "1.0.0",
+  "description": "WebAsk surveys, answers and reports right from Claude Code: the MCP server and 25 skills in English.",
+  "author": {
+    "name": "WebAsk",
+    "email": "team@webask.io",
+    "url": "https://webask.io"
+  },
+  "homepage": "https://webask.io",
+  "repository": "https://github.com/WebAskio/webask-mcp",
+  "license": "MIT",
+  "keywords": [
+    "webask",
+    "surveys",
+    "forms",
+    "quiz",
+    "mcp"
+  ],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "WebAsk API key",
+      "description": "WebAsk → Settings → API / MCP → Create API key",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "mcpServers": {
+    "webask": {
+      "type": "http",
+      "url": "https://mcp.webask.io/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_key}"
+      }
+    }
+  }
+}

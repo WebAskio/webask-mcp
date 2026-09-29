@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "webask": {
+      "httpUrl": "https://mcp.webask.io/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "get_quiz_summary"
+      description: "Quiz summary"
+      transport: "streamable_http"

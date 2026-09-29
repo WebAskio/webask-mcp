@@ -1,0 +1,6 @@
+# Навыки и документация — текст, а не код проекта
+skills/** linguist-documentation
+en/** linguist-documentation
+docs/** linguist-documentation
+# Проверочный скрипт — служебный: без этой строки GitHub подписывает репозиторий «Python 100%»
+scripts/** linguist-detectable=false

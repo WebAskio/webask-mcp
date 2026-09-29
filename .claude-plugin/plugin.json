@@ -1,0 +1,42 @@
+{
+  "name": "webask",
+  "displayName": "WebAsk",
+  "version": "1.0.0",
+  "description": "Опросы, ответы и отчёты WebAsk прямо из Claude Code: MCP-сервер и 25 навыков на русском.",
+  "author": {
+    "name": "WebAsk",
+    "email": "team@webask.io",
+    "url": "https://webask.io"
+  },
+  "homepage": "https://webask.io/skills",
+  "repository": "https://github.com/WebAskio/webask-mcp",
+  "license": "MIT",
+  "keywords": [
+    "webask",
+    "surveys",
+    "forms",
+    "quiz",
+    "mcp",
+    "опросы",
+    "анкеты",
+    "формы"
+  ],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Ключ WebAsk API",
+      "description": "Кабинет WebAsk → Настройки → API / MCP → «Создать API-ключ»",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "mcpServers": {
+    "webask": {
+      "type": "http",
+      "url": "https://mcp.webask.io/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_key}"
+      }
+    }
+  }
+}
