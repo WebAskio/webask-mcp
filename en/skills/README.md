@@ -68,6 +68,13 @@ Skills contain no code and run nothing. All a skill needs is access to WebAsk, w
 /plugin install webask-en@webask
 ```
 
+**Any assistant: one command.** [skills](https://skills.sh) finds your installed agents and asks where to
+put the skills:
+
+```bash
+npx skills add https://github.com/WebAskio/webask-mcp/tree/main/en/skills
+```
+
 **Any assistant: from an archive.** Download a skill's ZIP from the table above, or all of them at once:
 [webask-skills-en.zip](https://github.com/WebAskio/webask-mcp/releases/download/skills-latest/webask-skills-en.zip). Unzip into the folder your assistant reads skills
 from and restart it:

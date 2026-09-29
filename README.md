@@ -55,7 +55,15 @@ claude mcp add --transport http webask https://mcp.webask.io/mcp/v1 \
 
 ### Другие клиенты
 
-В конфигах ниже замените `YOUR_API_KEY` на свой ключ.
+В один клик:
+
+[![Установить в VS Code](https://img.shields.io/badge/VS%20Code-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=webask&inputs=%5B%7B%22type%22%3A%22promptString%22%2C%22id%22%3A%22webask_api_key%22%2C%22description%22%3A%22%D0%9A%D0%BB%D1%8E%D1%87%20WebAsk%20API%3A%20%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8%20%E2%86%92%20API%20%2F%20MCP%22%2C%22password%22%3Atrue%7D%5D&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.webask.io%2Fmcp%2Fv1%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%24%7Binput%3Awebask_api_key%7D%22%7D%7D)
+[![Установить в Cursor](https://img.shields.io/badge/Cursor-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=webask&config=eyJ1cmwiOiJodHRwczovL21jcC53ZWJhc2suaW8vbWNwL3YxIiwiaGVhZGVycyI6eyJBdXRob3JpemF0aW9uIjoiQmVhcmVyIFlPVVJfQVBJX0tFWSJ9fQ%3D%3D)
+
+VS Code спросит ключ сам. В Cursor после установки откройте настройки сервера `webask` и замените
+`YOUR_API_KEY` на ключ.
+
+Вручную — в конфигах ниже замените `YOUR_API_KEY` на свой ключ.
 
 <details>
 <summary><b>Claude Desktop</b></summary>
@@ -148,7 +156,13 @@ bearer_token_env_var = "WEBASK_API_KEY"
 
 <br>
 
-В файл `~/.gemini/settings.json`:
+Расширением — сервер и все навыки сразу, ключ Gemini спросит при установке:
+
+```bash
+gemini extensions install https://github.com/WebAskio/webask-mcp
+```
+
+Или только сервер, в файл `~/.gemini/settings.json`:
 
 ```json
 {
@@ -257,7 +271,14 @@ SPSS, Word и PDF.
 
 ### Как поставить навык без плагина
 
-Распакуйте архив в папку, из которой ваш ассистент читает навыки, и перезапустите его.
+Одной командой в любой ассистент — [skills](https://skills.sh) сам найдёт установленные агенты и спросит, куда
+положить навыки:
+
+```bash
+npx skills add https://github.com/WebAskio/webask-mcp/tree/main/skills
+```
+
+Или вручную: распакуйте архив в папку, из которой ваш ассистент читает навыки, и перезапустите его.
 
 | Ассистент | Папка в проекте |
 |---|---|

@@ -24,7 +24,7 @@
 
 | | | |
 |---|---|---|
-| **How happy are you with the work?** | rating · 5 stars | required |
+| **How happy are you with the work?** | rating · 5 stars | — |
 | **What could have gone better?** | input · shown when the rating is below 4 | branch |
 | **Was it finished on time?** | yesno | — |
 | **Rate reception, work and price** | matrix · 3 rows | — |

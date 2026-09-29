@@ -55,7 +55,15 @@ claude mcp add --transport http webask https://mcp.webask.io/mcp/v1 \
 
 ### Other clients
 
-Replace `YOUR_API_KEY` with your key in the configs below.
+One click:
+
+[![Install in VS Code](https://img.shields.io/badge/VS%20Code-Install-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=webask&inputs=%5B%7B%22type%22%3A%22promptString%22%2C%22id%22%3A%22webask_api_key%22%2C%22description%22%3A%22WebAsk%20API%20key%3A%20Settings%20%E2%86%92%20API%20%2F%20MCP%22%2C%22password%22%3Atrue%7D%5D&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.webask.io%2Fmcp%2Fv1%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%24%7Binput%3Awebask_api_key%7D%22%7D%7D)
+[![Install in Cursor](https://img.shields.io/badge/Cursor-Install-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=webask&config=eyJ1cmwiOiJodHRwczovL21jcC53ZWJhc2suaW8vbWNwL3YxIiwiaGVhZGVycyI6eyJBdXRob3JpemF0aW9uIjoiQmVhcmVyIFlPVVJfQVBJX0tFWSJ9fQ%3D%3D)
+
+VS Code asks for the key itself. In Cursor, open the `webask` server settings after installing and
+replace `YOUR_API_KEY` with your key.
+
+Manually: replace `YOUR_API_KEY` with your key in the configs below.
 
 <details>
 <summary><b>Claude Desktop</b></summary>
@@ -148,7 +156,14 @@ Codex reads the key from the environment: `export WEBASK_API_KEY=YOUR_API_KEY`.
 
 <br>
 
-In `~/.gemini/settings.json`:
+As an extension, with the server and the skills at once (Gemini asks for the key during installation).
+The extension ships the Russian skills; for English ones use `npx skills` below:
+
+```bash
+gemini extensions install https://github.com/WebAskio/webask-mcp
+```
+
+Or the server only, in `~/.gemini/settings.json`:
 
 ```json
 {
@@ -256,7 +271,14 @@ All English skills in one archive: [webask-skills-en.zip](https://github.com/Web
 
 ### Installing a skill without the plugin
 
-Unzip the archive into the folder your assistant reads skills from, then restart it.
+One command for any assistant: [skills](https://skills.sh) finds the agents you have installed and asks
+where to put the skills:
+
+```bash
+npx skills add https://github.com/WebAskio/webask-mcp/tree/main/en/skills
+```
+
+Or manually: unzip the archive into the folder your assistant reads skills from, then restart it.
 
 | Assistant | Folder in your project |
 |---|---|

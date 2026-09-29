@@ -67,6 +67,13 @@ WebAsk MCP. Ассистент читает навык сам, когда про
 /plugin install webask@webask
 ```
 
+**Любой ассистент — одной командой.** [skills](https://skills.sh) найдёт установленные агенты и спросит, куда
+положить навыки:
+
+```bash
+npx skills add https://github.com/WebAskio/webask-mcp/tree/main/skills
+```
+
 **Любой ассистент — архивом.** Скачайте ZIP нужного навыка из таблицы выше или все сразу —
 [webask-skills-ru.zip](https://github.com/WebAskio/webask-mcp/releases/download/skills-latest/webask-skills-ru.zip). Распакуйте в папку, из которой ассистент читает навыки, и
 перезапустите его:

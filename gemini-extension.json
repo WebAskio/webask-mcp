@@ -1,0 +1,21 @@
+{
+  "name": "webask",
+  "version": "1.0.0",
+  "description": "WebAsk surveys from Gemini CLI: build a survey from a brief, read answers, make reports. MCP server with 161 tools and 25 skills.",
+  "settings": [
+    {
+      "name": "WebAsk API key",
+      "description": "WebAsk → Настройки → API / MCP → «Создать API-ключ»",
+      "envVar": "WEBASK_API_KEY",
+      "sensitive": true
+    }
+  ],
+  "mcpServers": {
+    "webask": {
+      "httpUrl": "https://mcp.webask.io/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer ${WEBASK_API_KEY}"
+      }
+    }
+  }
+}

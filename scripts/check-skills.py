@@ -65,7 +65,7 @@ for label, base in (("ru", ROOT / "skills"), ("en", ROOT / "en/skills")):
 if sets["ru"] != sets["en"]:
     errors.append("русский и английский наборы разошлись: " + " ".join(sorted(set(sets["ru"]) ^ set(sets["en"]))))
 
-for f in [*ROOT.glob(".claude-plugin/*.json"), ROOT / "en/.claude-plugin/plugin.json", ROOT / "server.json",
+for f in [*ROOT.glob(".claude-plugin/*.json"), ROOT / "en/.claude-plugin/plugin.json", ROOT / "server.json", ROOT / "gemini-extension.json",
           *ROOT.glob("clients/*.json")]:
     try:
         json.loads(f.read_text(encoding="utf-8"))

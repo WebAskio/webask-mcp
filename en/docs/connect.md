@@ -67,7 +67,15 @@ export WEBASK_API_KEY=YOUR_API_KEY
 
 ### Gemini CLI
 
-Add [`clients/gemini.json`](../../clients/gemini.json) to `~/.gemini/settings.json` and replace `YOUR_API_KEY`.
+As an extension, with the server and the skills at once. Gemini asks for the key during installation and keeps
+it in the system keychain:
+
+```bash
+gemini extensions install https://github.com/WebAskio/webask-mcp
+```
+
+Server only: add [`clients/gemini.json`](../../clients/gemini.json) to `~/.gemini/settings.json` and replace
+`YOUR_API_KEY`.
 
 ### Other clients
 
